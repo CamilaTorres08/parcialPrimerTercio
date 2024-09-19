@@ -9,14 +9,12 @@ public class Product extends Agent{
     double price;
     int quantity;
     String category;
-    List<Observer> observers;
 
     public Product(String name, double price, int quantity, String category){
         this.name = name;
         this.price = price;
         this.quantity = quantity;
         this.category = category;
-        observers = new ArrayList<>();
     }
 
     public void notifyObservers(){
@@ -24,17 +22,6 @@ public class Product extends Agent{
             o.update(this);
         }
     }
-    public void addObserver(Observer o){
-        observers.add(o);
-    }
-
-    public void removeObserver(Observer o){
-        observers.remove(o);
-    }
-    public List<Observer> getObservers(){
-        return observers;
-    }
-
     public String getName(){
         return name;
     }
